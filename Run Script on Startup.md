@@ -25,7 +25,7 @@ startup.
 
 ---
 
-# Method 2: Using `systemd`
+## Method 2: Using `systemd`
 
 `systemd` is a system and service manager for Linux operating systems. It can be used to create a service that runs your
 script at startup.
@@ -67,7 +67,7 @@ script at startup.
 
 ---
 
-# Method 3: Using rc.local
+## Method 3: Using `rc.local`
 
 The `rc.local` file can be used to execute scripts at the end of the multi-user runlevel.
 
@@ -89,6 +89,31 @@ The `rc.local` file can be used to execute scripts at the end of the multi-user 
    sudo reboot
    ```
    The script should now run at startup.
+
+## Method 4: Using `Desktop Entry`
+
+1. Create your Python script and test it to ensure it works correctly.
+2. Create a .desktop file in the autostart directory:
+   ```bash
+   mkdir -p /home/pi/.config/autostart
+   ```
+   ```bash
+   nano /home/pi/.config/autostart/script1.desktop
+   ```
+3. Add the following content to the .desktop file:
+   ```text
+   [Desktop Entry]
+   Type=Application
+   Name=script1
+   Exec=lxterminal -e 'bash -c "cd /home/pi/<project> && /home/pi/<project>/.venv/bin/python main.py"'
+   ```
+   Replace "script1" with a descriptive name
+   and adjust the path to your script accordingly
+4. Save`ctrl + s` and exit`ctrl + x` the text editor.
+5. Make the .desktop file executable:
+   ```bash
+   chmod +x /home/pi/.config/autostart/script1.desktop
+   ```
 
 Each method has its own advantages. crontab is simple and effective for most use cases, systemd offers more control and
 logging, and rc.local is straightforward for quick setups. Choose the method that best suits your needs.
