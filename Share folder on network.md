@@ -1,4 +1,4 @@
-# Running a Python Script on Startup for Raspberry Pi
+# Share folder on network
 
 To share a folder on a network using a Raspberry Pi, you can set up a Samba server.
 Samba is a software suite that allows for file and print services to SMB/CIFS clients,
