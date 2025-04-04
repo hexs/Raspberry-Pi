@@ -19,8 +19,8 @@ sudo apt full-upgrade
 
 2. Add the Following Lines:
    ```text
-   http_proxy="150.61.8.70:10086"
-   https_proxy="150.61.8.70:10086"
+   http_proxy="http://150.61.8.70:10086"
+   https_proxy="http://150.61.8.70:10086"
    no_proxy="localhost,127.0.0.1"
    ```
 
@@ -38,8 +38,8 @@ sudo apt full-upgrade
 
 2. Add These Lines:
    ```text
-      Acquire::http::Proxy "150.61.8.70:10086";
-      Acquire::https::Proxy "150.61.8.70:10086";
+      Acquire::http::Proxy "http://150.61.8.70:10086";
+      Acquire::https::Proxy "http://150.61.8.70:10086";
    ```
 
 3. Save and Exit:
@@ -51,14 +51,14 @@ sudo apt full-upgrade
 1. For the Current Session:
 
 ```shell
-export http_proxy="150.61.8.70:10086"
-export https_proxy="150.61.8.70:10086"
+export http_proxy="http://150.61.8.70:10086"
+export https_proxy="http://150.61.8.70:10086"
 ```
 
 2. For a Specific Command:
 
 ```shell
-http_proxy="150.61.8.70:10086" wget http://example.com
+http_proxy="http://150.61.8.70:10086" wget http://example.com
 ```
 
 # Date
