@@ -115,5 +115,7 @@ The `rc.local` file can be used to execute scripts at the end of the multi-user 
    chmod +x /home/pi/.config/autostart/script1.desktop
    ```
 
+---
+
 Each method has its own advantages. crontab is simple and effective for most use cases, systemd offers more control and
 logging, and rc.local is straightforward for quick setups. Choose the method that best suits your needs.
