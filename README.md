@@ -1,3 +1,25 @@
+# Date
+
+## 1. Verify the System Date and Time
+
+```shell
+date
+```
+
+## 2. Update the System Time
+
+Using NTP (Network Time Protocol):
+
+```shell
+sudo timedatectl set-ntp true
+```
+
+Manually Setting the Date and Time:
+
+```shell
+sudo date -s "2025-09-01 00:00:00"
+```
+
 # Update software
 
 ```shell
@@ -59,28 +81,6 @@ export https_proxy="http://150.61.8.70:10080"
 
 ```shell
 http_proxy="http://150.61.8.70:10080" wget http://example.com
-```
-
-# Date
-
-## 1. Verify the System Date and Time
-
-```shell
-date
-```
-
-## 2. Update the System Time
-
-Using NTP (Network Time Protocol):
-
-```shell
-sudo timedatectl set-ntp true
-```
-
-Manually Setting the Date and Time:
-
-```shell
-sudo date -s "2025-03-31 15:00:00"
 ```
 
 # Install
