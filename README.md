@@ -20,17 +20,7 @@ Manually Setting the Date and Time:
 sudo date -s "2025-09-01 00:00:00"
 ```
 
-# Update software
-
-```shell
-sudo apt update
-```
-
-```shell
-sudo apt full-upgrade
-```
-
-# Set proxy (if use proxy server)
+# Set proxy (if using a proxy server)
 
 ## 1. System-Wide Proxy Configuration
 
@@ -50,25 +40,7 @@ sudo apt full-upgrade
 
    Press Ctrl+X, then Y, and Enter.
 
-## 2. Configuring Proxy for APT (Package Manager)
-
-1. Create/Edit the APT Proxy File:
-   ```shell
-   sudo nano /etc/apt/apt.conf.d/95proxies
-   ```
-
-
-2. Add These Lines:
-   ```text
-      Acquire::http::Proxy "http://150.61.8.70:10080";
-      Acquire::https::Proxy "http://150.61.8.70:10080";
-   ```
-
-3. Save and Exit:
-
-   Use Ctrl+X, then Y, and Enter.
-
-## 3. Setting Proxy for a Single Session or Application
+## 2. Setting Proxy for a Single Session or Application
 
 1. For the Current Session:
 
@@ -77,17 +49,71 @@ export http_proxy="http://150.61.8.70:10080"
 export https_proxy="http://150.61.8.70:10080"
 ```
 
+- For reset
+   ```shell
+   unset http_proxy
+   unset https_proxy
+   ```
+
+
 2. For a Specific Command:
 
 ```shell
 http_proxy="http://150.61.8.70:10080" wget http://example.com
 ```
 
-# Install
-
-## Install Virtual Keyboard on Raspberry Pi
+# Update software
 
 ```shell
-sudo apt install onboard
-sudo apt install at-spi2-core
+sudo apt update
+```
+
+```shell
+sudo apt full-upgrade
+```
+
+# Install
+
+## Remote Desktop
+
+```bash
+sudo apt-get install xrdp
+```
+
+## Install Python on the Raspberry Pi
+
+install the build tools
+
+```bash
+sudo apt update
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev  libsqlite3-dev
+```  
+
+download
+
+```bash
+cd /usr/src
+sudo wget https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz
+sudo tar -xzvf Python-3.12.6.tgz 
+cd Python-3.12.6/
+```
+
+```bash
+sudo ./configure --enable-optimizations
+sudo make altinstall
+```
+
+```bash
+/usr/local/bin/python3.12 -V
+/usr/bin/python3 -V
+```
+
+```bash
+sudo rm /usr/bin/python
+sudo rm /usr/bin/python3
+```
+
+```bash
+sudo ln -s /usr/local/bin/python3.12 /usr/bin/python
+sudo ln -s /usr/local/bin/python3.12 /usr/bin/python3
 ```
