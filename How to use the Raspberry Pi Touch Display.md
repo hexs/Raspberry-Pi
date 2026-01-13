@@ -15,3 +15,7 @@ Use an on-screen keyboard
 ```
 sudo apt install wvkbd
 ```
+
+```
+sudo apt install matchbox-keyboard
+```
