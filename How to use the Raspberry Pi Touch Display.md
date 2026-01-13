@@ -16,6 +16,8 @@ Use an on-screen keyboard
 sudo apt install wvkbd
 ```
 
+Using On-Screen Keyboard in Raspberry Pi OS
+https://itsfoss.com/raspberry-pi-os-onscreen-keyboard/
 ```
 sudo apt install matchbox-keyboard
 ```
